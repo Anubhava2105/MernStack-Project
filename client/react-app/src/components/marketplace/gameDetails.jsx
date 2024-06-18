@@ -5,7 +5,7 @@ const GameDetails=({game})=>{
         <div className="card">
             <div className="card-img-container">
               <img src={Shoe}></img>
-              <h4>{game.price}</h4>
+              <div className="card-overlay"><h4>{game.price}</h4></div>
             </div>
             <div className="tags-rate-container">
               <div className="genre">

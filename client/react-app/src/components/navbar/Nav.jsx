@@ -15,13 +15,13 @@ const Nav = () => {
                         <NavLink to="/">Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/login">Login</NavLink>
-                    </li>
-                    <li>
                         <NavLink to="/leaderboard">Players</NavLink>
                     </li>
                     <li>
                         <NavLink to="/games">Games</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/login">Login</NavLink>
                     </li>
                 </ul>
             </div>

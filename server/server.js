@@ -2,10 +2,12 @@ require('dotenv').config()
 const express = require("express");
 const mongoose=require('mongoose');
 const records=require('./routes/record.js')
+const admin=require('./routes/admin.js')
 const PORT = process.env.PORT || 5050;
 const app = express();
 app.use(express.json());
 app.use('/api/games',records);
+app.use('/api/admin',admin);
 app.use((req,res,next)=>{
     console.log(req.path,req.method)
     next()
@@ -24,7 +26,7 @@ mongoose.connect('mongodb://localhost:27017/gameStore')
 // app.get("/games", (req, res) => {
 //     const page=req.query.p || 0;
 //     const gamesperPage=5;
-//     let games = [];S
+//     let games = [];
 //     db.collection("games")
 //     .find()
 //     .sort({ name: 1 })
