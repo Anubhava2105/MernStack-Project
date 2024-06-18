@@ -1,0 +1,115 @@
+.market-container{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+}
+.market-header{
+    margin-top:2rem;
+    font-size:5rem;
+    font-family: "Bebas Neue",sans-serif;
+    letter-spacing: 0.3rem;
+    color:rgb(0,0,139);
+}
+.market-subheader{
+    font-size:2rem;
+    margin:1rem 0rem 2rem 1rem;
+    font-family: "Montserrat", sans-serif;
+    color:rgb(0,0,139);
+    text-transform: capitalize;
+}
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-template-rows: auto;
+}
+.card{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* max-height:360px; */
+    max-width:263px;
+    border:1px solid rgb(0,0,139);
+    color:rgb(0,0,139);
+    border-radius:20px;
+    padding:2rem;
+    transition: all 500ms;
+}
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 4px 4px rgb(0,0,139);
+}
+.card-img-container{
+    max-width:230px;
+    height:150px;
+    margin-bottom:0.5rem;
+}
+.card-img-container img{
+    width:230px;
+    height:150px;
+    border-radius: 10px;
+}
+.tags-rate-container{
+    width:263px;
+    height:20px;
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-wrap: nowrap;
+}
+.genre{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:1.3rem;
+    margin-right:1rem;
+    background-color: aliceblue ;
+    height:15px;
+    width:45px;
+    border:1px solid rgb(0,0,139);
+    border-radius: 10px;
+}
+.genre h2{
+    font-size:10px;
+}
+.rating{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right:1.3rem;
+    height:15px;
+    max-width:30px;
+}
+.rating h2{
+    font-size:10px;
+}
+.rating div{
+    height:15px;
+    width:16px;
+    clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%);
+    background-color: rgb(196, 196, 0);
+}
+.body-container{
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    padding:0.2rem;
+    width:263px;
+}
+.body-container h1{
+    font-size:1.5rem;
+    margin-left:1.3rem;
+}
+.body-container h5{
+    font-size:0.7rem;
+    opacity: 0.5;
+    margin-left:1.3rem;
+}
+.body-container p{
+    font-size:0.9rem;
+    margin-left:1.3rem;
+    margin-right:1.3rem;
+}

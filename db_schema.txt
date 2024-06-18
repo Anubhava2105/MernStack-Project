@@ -1,0 +1,4 @@
+games-> name,publisher,release-date,price,genre,quantity,rating,img, inf0
+admin->admin_name, admin_pwd, 
+player-> name, email,gender,age,pwd,
+

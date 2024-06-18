@@ -1,0 +1,225 @@
+/* Home Body */
+.body_container{
+    display:flex;
+    flex-direction:row;
+    width:98.9vw;
+    height:80vh;
+    padding:2rem;
+    align-items: center;
+    justify-content: space-around;
+}
+.content_container{
+    display:flex;
+    flex-direction:column;
+    max-height:700px;
+    min-width:400px;
+    width:600px;
+    height:600px;
+    padding:2rem;
+    justify-content: space-evenly;
+    align-items: left;
+}
+.content_container hr{
+    width:6rem;
+    align-self: self-start;
+    height:1rem;
+    border-radius: 50px;
+    border:none;
+    background: linear-gradient(to right, #faf, #00f 87% );
+}
+.body_header{
+    font-size:3rem;
+    font-family: "Bebas Neue",sans-serif;
+    letter-spacing: 0.3rem;
+    color:rgb(0,0,139);
+}
+.body_subheader{
+    font-size:2rem;
+    font-family: "Montserrat",sans-serif;
+    font-weight:500;
+    color:rgb(0,0,139);
+}
+.body_text{
+    font-family:"Montserrat",sans-serif;
+    font-size: 1rem;
+    font-weight:400;
+    letter-spacing: 0.1rem;;
+    color:rgb(0,0,139);
+}
+.btn_container{
+    display:flex;
+    flex-direction:row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap:3rem;
+}
+.btn1,.btn2{
+    border: 2px solid rgb(0,0,139);
+    background-color: rgba(221, 218, 244, 0.564);
+    border-radius: 40px;
+    padding:1rem;
+    font-size: 1rem;
+    color:rgb(0,0,139);
+    cursor:pointer;
+}
+.img_container{
+    max-height:700px;
+    min-width:400px;
+    width:600px;
+    height:600px;
+}
+.body_img{
+    height:70vh;
+    width:40vw;
+}
+.more_information{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:flex-start;
+    background-color: rgb(0,0,139);
+    width: 98.9vw;
+    height:30rem;
+    padding:1.2rem;
+
+}
+.classics,.next_gen,.hidden_gems{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color:rgb(255,255,255);
+    height:27rem;
+    width:20rem;    
+    border:2px solid rgb(255,255,255);
+    border-radius:2rem;
+    transition: all 400ms;
+}
+.classics:hover,.next_gen:hover,.hidden_gems:hover{
+    cursor:pointer;
+    transform:translateY(-5px);
+    box-shadow:5px 5px rgb(255,255,255);
+}
+.circle img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:2rem;
+    background-color: rgb(255,255,255);
+    border-radius: 50%;
+    height:15rem;
+    width:15rem;
+}
+.hidden_gems .circle img{
+    width:16rem;
+}
+.classics_info,.next_gen_info,.hidden_gems_info{
+    font-family:"Montserrat",sans-serif;
+    font-size:0.9rem;
+    font-weight:500;
+    margin:5%;
+    text-align:center;
+}
+.stay_ahead{
+    display: flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content: center;
+    padding-left: 5rem;
+    padding-right:5rem;
+    margin-top: 2rem;
+    min-width:400px;
+    max-height:500px;
+}
+.text-container .body_text{
+     font-size:1.25rem;
+     letter-spacing:0.2rem;
+}
+.last_header{
+    font-size:3rem;
+    font-family: "Bebas Neue",sans-serif;
+    letter-spacing: 0.3rem;
+    color:rgb(0,0,139);
+}
+.stay_ahead hr{
+    margin:2rem;
+    min-width:50px;
+    width:80vw;
+    align-self: center;
+    padding:2px;
+    border:none;
+    background-color: rgb(0,0,139);
+}
+/* Footer */
+.footer_container{
+    padding:1rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: space-between;
+    gap:2rem;
+}
+.footer_container hr{
+    width:900px;
+    background-color: rgb(0,0,139);
+    padding:0.05rem;
+    margin-bottom:0.5rem;
+}
+.tag{
+    font-family: "Bebas Neue";
+    font-size: 1.25rem;
+    color:rgb(0,0,139);
+}
+.bala2 .tag{
+    font-family: "Bebas Neue";
+    font-size: 1.25rem;
+    color:rgb(0,0,139);
+    margin:0 0 1rem 3.5rem
+}
+.follow-contact-container{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap:4rem;
+}
+.follow_us{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:center;
+    gap:2rem;
+    margin-left:3.5rem;
+}
+.insta_img,.twitter_img{
+    border-radius: 50%;
+    background-color: rgb(181, 181, 252);
+    height:40px;
+    width:40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.contact_us{
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content:center;
+    gap:0.5rem;
+    margin-right:3.5rem;
+    font-size: 1rem;
+    font-family: "Montserrat",sans-serif;
+    font-weight:400;
+}
+.bala .tag{
+    margin-left:0;
+    margin-bottom: 1rem;
+}
+.insta_img a img{
+    height:20px;
+    width:20px;
+}
+.twitter_img a img{
+    height:20px;
+    width:20px;
+}
