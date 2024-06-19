@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./market.css";
 import GameDetails from "./gameDetails.jsx";
-
+import GameInfo from "./gameInfo.jsx"
 const Market = () => {
   const [games, setGames] = useState([]);
-
   useEffect(() => {
     const fetchGames = async () => {
       try {
@@ -38,6 +37,7 @@ const Market = () => {
         {games.map((game) => (
           <GameDetails key={game._id} game={game} />
         ))}
+        {/* <h3 className="market-subheader">Could not find what you were looking for...</h3> */}
       </div>
     </div>
   );

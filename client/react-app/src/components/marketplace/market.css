@@ -21,7 +21,7 @@
 .card-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-gap: 10px;
     grid-template-rows: auto;
 }
 .card{
@@ -35,6 +35,7 @@
     color:rgb(0,0,139);
     border-radius:20px;
     padding:1.5rem;
+    cursor:pointer;
     transition: all 500ms;
 }
 .card:hover{
@@ -93,7 +94,7 @@
     max-width:30px;
 }
 .rating h2{
-    font-size:10px;
+    font-size:12px;
 }
 .rating div{
     height:15px;

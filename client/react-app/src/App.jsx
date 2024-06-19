@@ -7,6 +7,7 @@ import Body from './components/body/Body.jsx';
 import Sign from './components/signup/Sign.jsx';
 import Player from './components/playerRecord/Players.jsx';
 import Market from './components/marketplace/Market.jsx';
+import GameInfo from './components/marketplace/gameInfo.jsx';
 
 
 const router=createBrowserRouter(
@@ -17,6 +18,7 @@ const router=createBrowserRouter(
       <Route path="signup" element ={<Sign />} />
       <Route path="leaderboard" element={<Player />} />
       <Route path="games" element={< Market />} />
+      <Route path="games/:id" element={< GameInfo />} />
     </Route>
   )
 )
