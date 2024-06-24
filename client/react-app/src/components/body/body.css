@@ -48,9 +48,10 @@
 }
 .btn_container{
     display:flex;
+    width:30rem;
     flex-direction:row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
     gap:3rem;
 }
 .btn1,.btn2{
@@ -60,7 +61,11 @@
     padding:1rem;
     font-size: 1rem;
     color:rgb(0,0,139);
+    width:fit-content;
     cursor:pointer;
+}
+.btn2{
+    padding:1.5rem;;
 }
 .img_container{
     max-height:700px;
@@ -216,10 +221,15 @@
     margin-bottom: 1rem;
 }
 .insta_img a img{
+    box-sizing: content-box;
     height:20px;
     width:20px;
+    padding-top:0.1rem;
 }
 .twitter_img a img{
+    box-sizing: content-box;
+    padding-top:0.2rem;
+    padding-left:0.1rem;
     height:20px;
     width:20px;
 }

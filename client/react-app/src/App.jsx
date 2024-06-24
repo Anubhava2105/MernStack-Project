@@ -5,7 +5,7 @@ import Login from './components/login/Login.jsx';
 import Nav from'./components/navbar/Nav.jsx';
 import Body from './components/body/Body.jsx';
 import Sign from './components/signup/Sign.jsx';
-import Player from './components/playerRecord/Players.jsx';
+// import Player from './components/playerRecord/Players.jsx';
 import Market from './components/marketplace/Market.jsx';
 import GameInfo from './components/marketplace/gameInfo.jsx';
 
@@ -16,7 +16,7 @@ const router=createBrowserRouter(
       <Route index element={<Body/>} />
       <Route path="login" element ={<Login />} />
       <Route path="signup" element ={<Sign />} />
-      <Route path="leaderboard" element={<Player />} />
+      {/* <Route path="leaderboard" element={<Player />} /> */}
       <Route path="games" element={< Market />} />
       <Route path="games/:id" element={< GameInfo />} />
     </Route>
@@ -24,10 +24,6 @@ const router=createBrowserRouter(
 )
 function App() {
   return(
-    // <>
-    // <Nav />
-    // <Body />
-    // </>
     <RouterProvider router={router} />
   );
 }

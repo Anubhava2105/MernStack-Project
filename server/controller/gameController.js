@@ -26,15 +26,40 @@ const getSingleGame = async (req, res) => {
 
 //add new game info
 const createGame = async (req, res) => {
-  const { name, price, release, publisher, quantity, genre, rating, info } =
-    req.body;
+  const { name, price, release, publisher, genre, rating, info } = req.body;
+  let emptyFields = [];
+  if (!name) {
+    emptyFields.push("name");
+  }
+  if (!price) {
+    emptyFields.push("price");
+  }
+  if (!release) {
+    emptyFields.push("release");
+  }
+  if (!publisher) {
+    emptyFields.push("publisher");
+  }
+  if (!genre) {
+    emptyFields.push("genre");
+  }
+  if (!rating) {
+    emptyFields.push("rating");
+  }
+  if (!info) {
+    emptyFields.push("info");
+  }
+  if (emptyFields.length > 0) {
+    return res
+      .status(400)
+      .json({ error: "Please fill in the following fields: " + emptyFields });
+  }
   try {
     const game = await Game.create({
       name,
       price,
       release,
       publisher,
-      quantity,
       genre,
       rating,
       info,
@@ -50,7 +75,7 @@ const deleteGame = async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({ error: "No such game" });
   }
-  const deleteGame = await Game.findOneAndDeleteById(id);
+  const deleteGame = await Game.findByIdAndDelete(id);
   if (!deleteGame) {
     return res.status(400).json({ error: "Couldn't delete" });
   }

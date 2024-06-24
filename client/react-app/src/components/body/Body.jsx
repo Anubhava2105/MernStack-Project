@@ -27,8 +27,8 @@ const Body = () => {
             there’s something for every player.
           </p>
           <div className="btn_container">
-            <button className="btn1" onClick={()=>navigate("/signup")}>Sign up as Player</button>
-            <button className="btn2" onClick={()=>{navigate("/login")}}>Contribute as Admin</button>
+            <button className="btn1" onClick={()=>navigate("/signup")}>Sign up</button>
+            <button className="btn2" onClick={()=>{navigate("/login")}}>Login</button>
           </div>
         </div>
         <div className="img_container">

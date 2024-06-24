@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.create {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  padding: 2rem;
+  align-items: center;
+  justify-items: start;
+}
+h3 {
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(0, 0, 139);
+}
+label {
+  font-size: 1.3rem;
+}
+input,
+textarea {
+  color: rgb(0, 0, 139);
+  padding: 0.2rem;
+  width: 300px;
+  border: 1px solid rgb(0, 0, 139);
+  border-radius: 0.4rem;
+}
+button {
+  margin: 0 auto;
+  border: 2px solid rgb(0, 0, 139);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  width: fit-content;
+  height: 3rem;
+  padding: 1rem;
+  cursor: pointer;
+  background-color: aliceblue;
+  transition: all 300ms;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 2px rgb(0, 0, 139);
+}
+input.error{
+  border:2px solid rgb(255,0,0);
+  background-color: black;
+}

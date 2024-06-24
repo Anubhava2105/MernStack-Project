@@ -18,10 +18,6 @@ const gameSchema=new Schema({
         type:String,
         required:true
     },
-    quantity:{
-        type:Number,
-        required:true
-    },
     genre:{
         type:String,
         required:true
