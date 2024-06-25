@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { UseGamesContext } from "../../hooks/useGamesContext.jsx";
+import { UseAuthContext } from "../../hooks/useAuthContext.jsx";
 import AddIcon from "@mui/icons-material/Add.js";
 import "./market.css";
 import GameDetails from "./gameDetails.jsx";
@@ -8,10 +9,15 @@ import GameInfo from "./gameInfo.jsx";
 import Popup from "reactjs-popup";
 const Market = () => {
   const { games, dispatch } = UseGamesContext();
+  const { user } = UseAuthContext();
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const response = await fetch("/api/games");
+        const response = await fetch("/api/games",{
+          headers:{
+            'Authorization':`Bearer ${user.token}`
+          }
+        });
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -27,8 +33,10 @@ const Market = () => {
         console.error("Fetch error: " + error.message);
       }
     };
-    fetchGames();
-  }, [dispatch]);
+    if (user) {
+      fetchGames();
+    }
+  }, [dispatch,user]);
 
   return (
     <div className="market-container">

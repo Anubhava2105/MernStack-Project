@@ -3,21 +3,29 @@ import { Delete, DeleteRounded } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { UseGamesContext } from "../../hooks/useGamesContext";
+import { UseAuthContext } from "../../hooks/useAuthContext";
 import "./market.css";
 const GameDetails = ({ game }) => {
   const { dispatch } = UseGamesContext();
+  const { user } = UseAuthContext();
+  if (!user) {
+    return;
+  }
   const handleClick = async () => {
     try {
       const response = await fetch(`/api/games/${game._id}`, {
-        method: 'DELETE',
+        method: "DELETE",
+        headers: {
+          'Authorization': `Bearer ${user.token}`,
+        },
       });
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       const json = await response.json();
-      dispatch({ type: 'DELETE_GAME', payload: json });
+      dispatch({ type: "DELETE_GAME", payload: json });
     } catch (error) {
-      console.error('There was a problem with the fetch operation:', error);
+      console.error("There was a problem with the fetch operation:", error);
     }
   };
   const navigate = useNavigate();

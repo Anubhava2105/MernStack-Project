@@ -1,20 +1,24 @@
-const express=require('express')
-const {createGame,getGame,getSingleGame,deleteGame,updateGame}=require('../controller/gameController.js')
-const router=express.Router()
-
+const express = require("express");
+const {
+  createGame,
+  getGame,
+  getSingleGame,
+  deleteGame,
+  updateGame,
+} = require("../controller/gameController.js");
+const requireAuth = require("../middleware/requireAuth.js");
+const router = express.Router();
+//require auth for all game routes
+router.use(requireAuth);
 //get all games
-router.get('/',getGame)
+router.get("/", getGame);
 //get single game
-router.get('/:id',getSingleGame)
+router.get("/:id", getSingleGame);
 //post about new game
-router.post('/', createGame)
+router.post("/", createGame);
 //delete
-router.delete('/:id',deleteGame)
+router.delete("/:id", deleteGame);
 //update
-router.patch('/:id',updateGame)
+router.patch("/:id", updateGame);
 
-
-
-
-
-module.exports=router;
+module.exports = router;
