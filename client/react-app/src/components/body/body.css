@@ -1,235 +1,466 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
 /* Home Body */
-.body_container{
-    display:flex;
-    flex-direction:row;
-    width:98.9vw;
-    height:80vh;
-    padding:2rem;
+.body_container {
+  display: flex;
+  flex-direction: column;
+  width: 98.9vw;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.content_container {
+  display: flex;
+  flex-direction: column;
+  max-height: 700px;
+  min-width: 300px;
+  width: 90%;
+  padding: 2rem;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.content_container hr {
+  width: 6rem;
+  height: 1rem;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(to right, #faf, #00f 87%);
+  align-self: flex-start;
+}
+
+.body_header {
+  font-size: 3rem;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.3rem;
+  color: rgb(0, 0, 139);
+}
+
+.body_subheader {
+  font-size: 1.9rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: rgb(0, 0, 139);
+}
+
+.body_text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  color: rgb(0, 0, 139);
+  min-width: 100%;
+}
+
+.img_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  max-width: 90%;
+  width: 100%;
+}
+
+.body_img {
+  max-width: 100%;
+  height: auto;
+}
+
+.more_information {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  place-items: center;
+  background-color: rgb(0, 0, 139);
+  width: 100%;
+  padding: 1.2rem;
+  gap: 2rem;
+}
+
+.classics,
+.next_gen,
+.hidden_gems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: rgb(255, 255, 255);
+  padding: 2rem;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 2rem;
+  transition: all 400ms;
+  width: 90%;
+}
+
+.classics:hover,
+.next_gen:hover,
+.hidden_gems:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 5px 5px rgb(255, 255, 255);
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle img {
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  max-width: 60%;
+  width: 20rem;
+  height: 10rem;
+}
+
+.classics_info,
+.next_gen_info,
+.hidden_gems_info {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0.2rem;
+  text-align: center;
+}
+
+.stay_ahead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin: 2rem auto;
+  min-width: 300px;
+  max-width: 90%;
+}
+
+.text-container .body_text {
+  font-size: 1.25rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.last_header {
+  align-self: start;
+  font-size: 2rem;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.3rem;
+  color: rgb(0, 0, 139);
+}
+
+.stay_ahead hr {
+  margin: 2rem auto;
+  min-width: 50px;
+  width: 80%;
+  align-self: center;
+  padding: 2px;
+  border: none;
+  background-color: rgb(0, 0, 139);
+}
+
+/* Footer */
+.footer_container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer_container hr {
+  width: 90%;
+  background-color: rgb(0, 0, 139);
+  padding: 0.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  font-family: "Bebas Neue";
+  font-size: 1.25rem;
+  color: rgb(0, 0, 139);
+}
+
+.bala2 .tag {
+  font-family: "Bebas Neue";
+  font-size: 1.25rem;
+  color: rgb(0, 0, 139);
+  margin: 0 0 1rem 3.5rem;
+}
+
+.follow-contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.follow_us {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.insta_img,
+.twitter_img {
+  border-radius: 50%;
+  background-color: rgb(181, 181, 252);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contact_us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-right: 3.5rem;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+.bala,
+.bala2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bala .tag {
+  margin: 1rem 1.7rem;
+}
+
+.insta_img a,
+.twitter_img a,
+.twitter_img a img {
+  height: 20px;
+  width: 20px;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .body_container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content_container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .body_header {
+    font-size: 1.5rem;
+  }
+
+  .body_subheader {
+    font-size: 1.2rem;
+  }
+
+  .body_text {
+    font-size: 0.9rem;
+  }
+
+  .img_container {
+    min-height: 300px;
+  }
+
+  .body_img {
+    height: auto;
+    width: 100%;
+  }
+
+  .more_information {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.3rem;
+  }
+
+  .classics,
+  .next_gen,
+  .hidden_gems {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .circle img {
+    max-width: 100%;
+    width: 10rem;
+    height: 5rem;
+  }
+
+  .stay_ahead {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .text-container .body_text {
+    margin: 1rem 1.4rem;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .last_header {
+    font-size: 1.5rem;
+  }
+
+  .footer_container {
+    padding: 1rem;
+  }
+  .footer_container > .tag {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .bala,
+  .bala2 {
+    width: 10rem;
+    height: 6rem;
+  }
+  .bala .tag,
+  .bala2 .tag {
+    margin: 0.5rem auto;
+  }
+  .bala {
+    margin:0.5rem auto;
+  }
+  .footer_container hr {
+    width: 100%;
+  }
+
+  .follow-contact-container {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .contact_us {
+    font-size: 0.8rem;
+    gap:0.2rem;
+    margin-right:0;
+  }
+}
+
+@media (min-width: 600px) {
+  .body_container {
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
-}
-.content_container{
-    display:flex;
-    flex-direction:column;
-    max-height:700px;
-    min-width:400px;
-    width:600px;
-    height:600px;
-    padding:2rem;
-    justify-content: space-evenly;
-    align-items: left;
-}
-.content_container hr{
-    width:6rem;
-    align-self: self-start;
-    height:1rem;
-    border-radius: 50px;
-    border:none;
-    background: linear-gradient(to right, #faf, #00f 87% );
-}
-.body_header{
-    font-size:3rem;
-    font-family: "Bebas Neue",sans-serif;
-    letter-spacing: 0.3rem;
-    color:rgb(0,0,139);
-}
-.body_subheader{
-    font-size:2rem;
-    font-family: "Montserrat",sans-serif;
-    font-weight:500;
-    color:rgb(0,0,139);
-}
-.body_text{
-    font-family:"Montserrat",sans-serif;
-    font-size: 1rem;
-    font-weight:400;
-    letter-spacing: 0.1rem;;
-    color:rgb(0,0,139);
-}
-.btn_container{
-    display:flex;
-    width:30rem;
-    flex-direction:row;
-    align-items: center;
-    justify-content: space-between;
-    gap:3rem;
-}
-.btn1,.btn2{
-    border: 2px solid rgb(0,0,139);
-    background-color: rgba(221, 218, 244, 0.564);
-    border-radius: 40px;
-    padding:1rem;
-    font-size: 1rem;
-    color:rgb(0,0,139);
-    width:fit-content;
-    cursor:pointer;
-}
-.btn2{
-    padding:1.5rem;;
-}
-.img_container{
-    max-height:700px;
-    min-width:400px;
-    width:600px;
-    height:600px;
-}
-.body_img{
-    height:70vh;
-    width:40vw;
-}
-.more_information{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-around;
-    align-items:flex-start;
-    background-color: rgb(0,0,139);
-    width: 98.9vw;
-    height:30rem;
-    padding:1.2rem;
+  }
 
-}
-.classics,.next_gen,.hidden_gems{
-    display:flex;
-    flex-direction: column;
+  .content_container {
+    width: 600px;
+    height: 600px;
+  }
+
+  .body_img {
+    height: 60vh;
+    width: 40vw;
+  }
+
+  .more_information {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  .classics,
+  .next_gen,
+  .hidden_gems {
+    width: 25rem;
+    height: 20rem;
+  }
+
+  .stay_ahead {
     align-items: center;
-    justify-content: space-evenly;
-    color:rgb(255,255,255);
-    height:27rem;
-    width:20rem;    
-    border:2px solid rgb(255,255,255);
-    border-radius:2rem;
-    transition: all 400ms;
-}
-.classics:hover,.next_gen:hover,.hidden_gems:hover{
-    cursor:pointer;
-    transform:translateY(-5px);
-    box-shadow:5px 5px rgb(255,255,255);
-}
-.circle img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:2rem;
-    background-color: rgb(255,255,255);
-    border-radius: 50%;
-    height:15rem;
-    width:15rem;
-}
-.hidden_gems .circle img{
-    width:16rem;
-}
-.classics_info,.next_gen_info,.hidden_gems_info{
-    font-family:"Montserrat",sans-serif;
-    font-size:0.9rem;
-    font-weight:500;
-    margin:5%;
-    text-align:center;
-}
-.stay_ahead{
-    display: flex;
-    flex-direction:column;
-    align-items:flex-start;
-    justify-content: center;
     padding-left: 5rem;
-    padding-right:5rem;
-    margin-top: 2rem;
-    min-width:400px;
-    max-height:500px;
-}
-.text-container .body_text{
-     font-size:1.25rem;
-     letter-spacing:0.2rem;
-}
-.last_header{
-    font-size:3rem;
-    font-family: "Bebas Neue",sans-serif;
-    letter-spacing: 0.3rem;
-    color:rgb(0,0,139);
-}
-.stay_ahead hr{
-    margin:2rem;
-    min-width:50px;
-    width:80vw;
-    align-self: center;
-    padding:2px;
-    border:none;
-    background-color: rgb(0,0,139);
-}
-/* Footer */
-.footer_container{
-    padding:1rem;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: space-between;
-    gap:2rem;
-}
-.footer_container hr{
-    width:900px;
-    background-color: rgb(0,0,139);
-    padding:0.05rem;
-    margin-bottom:0.5rem;
-}
-.tag{
-    font-family: "Bebas Neue";
-    font-size: 1.25rem;
-    color:rgb(0,0,139);
-}
-.bala2 .tag{
-    font-family: "Bebas Neue";
-    font-size: 1.25rem;
-    color:rgb(0,0,139);
-    margin:0 0 1rem 3.5rem
-}
-.follow-contact-container{
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    gap:4rem;
-}
-.follow_us{
-    display:flex;
+    padding-right: 5rem;
+  }
+
+  .text-container .body_text {
+    text-align: left;
+  }
+
+  .last_header {
+    font-size: 3rem;
+  }
+  .footer_container > .tag {
+    margin: 0;
+    text-align: center;
+  }
+  .footer_container hr {
+    width: 900px;
+  }
+
+  .follow-contact-container {
     flex-direction: row;
-    align-items:center;
-    justify-content:center;
-    gap:2rem;
-    margin-left:3.5rem;
+    gap: 4rem;
+  }
 }
-.insta_img,.twitter_img{
-    border-radius: 50%;
-    background-color: rgb(181, 181, 252);
-    height:40px;
-    width:40px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.contact_us{
-    display:flex;
-    flex-direction: column;
-    align-items:flex-start;
-    justify-content:center;
-    gap:0.5rem;
-    margin-right:3.5rem;
-    font-size: 1rem;
-    font-family: "Montserrat",sans-serif;
-    font-weight:400;
-}
-.bala .tag{
-    margin-left:0;
-    margin-bottom: 1rem;
-}
-.insta_img a img{
-    box-sizing: content-box;
-    height:20px;
-    width:20px;
-    padding-top:0.1rem;
-}
-.twitter_img a img{
-    box-sizing: content-box;
-    padding-top:0.2rem;
-    padding-left:0.1rem;
-    height:20px;
-    width:20px;
+
+@media (min-width: 1024px) {
+  .body_container {
+    height: 80vh;
+  }
+
+  .more_information {
+    height: 30rem;
+  }
+
+  .classics,
+  .next_gen,
+  .hidden_gems {
+    height: 27rem;
+  }
+
+  .stay_ahead {
+    max-height: 500px;
+  }
+  .bala,
+  .bala2 {
+    width: 10rem;
+    height: 6rem;
+  }
+  .bala .tag,
+  .bala2 .tag {
+    margin: 0.5rem auto;
+  }
+  .bala {
+    margin:0.5rem auto;
+  }
+
+  .text-container .body_text {
+    font-size: 1.5rem;
+  }
+
+  .last_header {
+    text-align: left;
+    font-size: 3rem;
+  }
+  .contact_us {
+    font-size: 0.8rem;
+    gap:0.2rem;
+    margin-right:0;
+  }
 }

@@ -6,6 +6,8 @@ export const gameReducer = (state, action) => {
   switch (action.type) {
     case "SET_GAME":
       return { games: action.payload };
+    case "SET_SINGLE_GAME":
+      return { games: state.games.filter((g) => g._id === action.payload._id) };
     case "CREATE_GAME":
       return { games: [action.payload, ...state.games] };
     case "DELETE_GAME":

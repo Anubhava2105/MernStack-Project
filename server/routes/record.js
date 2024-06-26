@@ -10,7 +10,7 @@ const requireAuth = require("../middleware/requireAuth.js");
 const router = express.Router();
 //require auth for all game routes
 router.use(requireAuth);
-//get all games
+//get all games 
 router.get("/", getGame);
 //get single game
 router.get("/:id", getSingleGame);

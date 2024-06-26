@@ -3,6 +3,107 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+}
+
+.market-header {
+  margin-top: 2rem;
+  font-size: 3rem;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.3rem;
+  color: rgb(0, 0, 139);
+  text-align: center;
+}
+
+.market-subheader {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(0, 0, 139);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.add-button {
+  margin: 2rem auto;
+  background-color: rgb(0, 0, 139);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 150px;
+  gap: 0.3rem;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  border: none;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 300ms;
+}
+
+.add-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+[data-popup="tooltip"].popup-overlay {
+  background: transparent;
+}
+
+.modal {
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .market-header {
+    font-size: 2.5rem;
+  }
+
+  .market-subheader {
+    font-size: 1.2rem;
+  }
+
+  .add-button {
+    width: 120px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .market-header {
+    font-size: 2rem;
+  }
+
+  .market-subheader {
+    font-size: 1rem;
+  }
+
+  .add-button {
+    width: 100px;
+    font-size: 0.7rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
+.market-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .market-header {
   margin-top: 2rem;
@@ -19,7 +120,7 @@
   text-transform: capitalize;
 }
 .add-button {
-  margin: 4rem auto;
+  margin: 2rem auto;
   background-color: rgb(0, 0, 139);
   color: white;
   display: flex;
@@ -66,7 +167,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* max-height:360px; */
   max-width: 263px;
   border: 1px solid rgb(0, 0, 139);
   color: rgb(0, 0, 139);
@@ -162,11 +262,22 @@
   margin-left: 1.3rem;
 }
 .body-container p {
-  min-height: 6rem;
+  min-height: 2rem;
+  width:14rem;
   font-size: 0.9rem;
   margin-left: 1.3rem;
   margin-right: 1.3rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+.edit-option-container{
+  width:12rem;
+  display: flex;
+  align-items:center;
+  justify-content: space-evenly;
+}
+
 span {
   margin: 0.3rem auto;
   background-color: rgb(209, 0, 0);

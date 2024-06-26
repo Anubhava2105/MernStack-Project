@@ -87,7 +87,7 @@ const updateGame = async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({ error: "No such game" });
   }
-  const updateGame = await Game.findOneAndUpdate({ _id: id }, { ...req.body });
+  const updateGame = await Game.findByIdAndUpdate({ _id: id }, { ...req.body });
   if (!updateGame) {
     return res.status(400).json({ error: "Couldn't update" });
   }

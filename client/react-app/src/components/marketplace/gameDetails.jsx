@@ -1,7 +1,6 @@
 import Shoe from "../../assets/shoe.png";
-import { Delete, DeleteRounded } from "@mui/icons-material";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { DeleteRounded } from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
 import { UseGamesContext } from "../../hooks/useGamesContext";
 import { UseAuthContext } from "../../hooks/useAuthContext";
 import "./market.css";
@@ -16,7 +15,7 @@ const GameDetails = ({ game }) => {
       const response = await fetch(`/api/games/${game._id}`, {
         method: "DELETE",
         headers: {
-          'Authorization': `Bearer ${user.token}`,
+          Authorization: `Bearer ${user.token}`,
         },
       });
       if (!response.ok) {
@@ -28,14 +27,8 @@ const GameDetails = ({ game }) => {
       console.error("There was a problem with the fetch operation:", error);
     }
   };
-  const navigate = useNavigate();
   return (
-    <div
-      className="card"
-      // onClick={() => {
-      //   navigate('/games/'+game._id);
-      // }}
-    >
+    <div className="card">
       <div className="card-img-container">
         <img src={Shoe}></img>
         <div className="card-overlay">
@@ -56,10 +49,14 @@ const GameDetails = ({ game }) => {
         <h5>{game.publisher}</h5>
         <p>{game.info}</p>
       </div>
-      <span onClick={handleClick}>
-        <DeleteRounded />
-        Delete
-      </span>
+      <div className="edit-option-container">
+        <span onClick={handleClick}>
+          <DeleteRounded />
+          Delete
+        </span>
+      </div>
+
+      <NavLink to={`gameinfo/${game._id}`}>View Details</NavLink>
     </div>
   );
 };

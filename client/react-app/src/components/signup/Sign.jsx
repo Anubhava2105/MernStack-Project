@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./sign.css";
+import { NavLink } from "react-router-dom";
 import Signup from "../../assets/register_illustration.png";
 import { UseSignup } from "../../hooks/useSignup";
 const Sign = () => {
@@ -36,6 +37,9 @@ const Sign = () => {
             <button className="sign-btn" type="submit" disabled={isPending}>
               {isPending ? "Signing up..." : "Sign Up"}
             </button>
+            <div className="to-login">
+              <NavLink to="/login">Already a user? Login</NavLink>
+            </div>
           </form>
           {error && <div className="error">{error}</div>}
         </div>

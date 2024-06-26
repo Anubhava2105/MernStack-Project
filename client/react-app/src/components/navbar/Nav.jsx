@@ -4,25 +4,32 @@ import { NavLink, Outlet } from "react-router-dom";
 import { useLogout } from "../../hooks/useLogout";
 import { UseAuthContext } from "../../hooks/useAuthContext";
 import { IoClose, IoMenu } from "react-icons/io5";
+import { useState } from "react";
+
 const Nav = () => {
   const { logout } = useLogout();
-
   const { user } = UseAuthContext();
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const handleClick = () => {
     logout();
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
     <>
       <div className="Navbar">
         <h1 className="heading">
-          <img className="logo_img" src={Logo} alt=" "></img>PlayForge
+          <img className="logo_img" src={Logo} alt=" " />PlayForge
         </h1>
-        <div className="nav_menu">
+        <div className="menu_icon" onClick={toggleMenu}>
+          {menuOpen ? <IoClose /> : <IoMenu />}
+        </div>
+        <div className={`nav_menu ${menuOpen ? "open" : ""}`}>
           <ul className="nav_links">
-            {/* <li>
-                        <NavLink to="/leaderboard">Players</NavLink>
-                    </li> */}
             {user && (
               <>
                 <li>
@@ -55,4 +62,5 @@ const Nav = () => {
     </>
   );
 };
+
 export default Nav;

@@ -32,7 +32,7 @@ const Body = () => {
           </div> */}
         </div>
         <div className="img_container">
-          <img className="body_img" src={Home} alt="yoo"></img>
+          <img className="body_img" src={Home} alt="home-image"></img>
         </div>
       </div>
       {/* More information about us */}
@@ -72,7 +72,7 @@ const Body = () => {
         <h1 className="last_header">Stay ahead of the game</h1>
         <div className="text-container">
           <p className="body_text">
-            Stay ahead in the gaming world with<strong>PlayForge</strong>.
+            Stay ahead in the gaming world with<strong> PlayForge</strong>.
             Whether you're a veteran or just starting out, our ever-expanding
             library offers exclusive previews, community challenges, and VIP
             rewards to keep you at the cutting edge. Dive into immersive digital

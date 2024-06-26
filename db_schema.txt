@@ -1,4 +1,13 @@
-games-> name,publisher,release-date,price,genre,quantity,rating,img, inf0
-admin->admin_name, admin_pwd, 
-player-> name, email,gender,age,pwd,
+games-> name,publisher,release-date,price,genre,rating,img, inf0
+admin->admin_email, admin_pwd, 
+
+to do->
+update form just like add form only handlesubmit function will change to put a patch request to the server to update the content.
+doesnt need to have all fields filled, can only update one thing at a time.
+
+update form opens after clicking on edit button
+maybe like a modal maybe not
+
+
+
 
