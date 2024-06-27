@@ -6,17 +6,49 @@ import Street from "../../assets/street_fighter.svg";
 import Elden from "../../assets/elden_ring.png";
 import Hollow from "../../assets/hollow_knight.png";
 import { useNavigate } from "react-router-dom";
+import Typewriter from "typewriter-effect";
 // import Login from "../login/Login.jsx";
 import "./body.css";
 
 const Body = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       {/* Main Body(Hero) */}
       <div className="body_container">
         <div className="content_container">
-          <h1 className="body_header">Latest Releases and Classics!</h1>
+          <Typewriter
+            options={{
+              skipAddStyles: true,
+              autostart: true,
+              loop: true,
+              wrapperClassName: "wrapper-name",
+              cursorClassName: "cursor-name",
+              cursor: "|",
+            }}
+            onInit={(typewriter) => {
+              const typeAndDelete = () => {
+                typewriter
+                  .typeString(
+                    "<h1 className='body_header' style='color:rgb(0,0,139);font-size:2.7rem;'>Latest Releases and Classics!</h1>"
+                  )
+                  .callFunction(() => {
+                    console.log("String typed out, now pause for 2 seconds...");
+                  })
+                  .pauseFor(3000)
+                  .callFunction(() => {
+                    console.log("All strings were deleted");
+                  })
+
+                  .callFunction(() => {
+                    typeAndDelete(); // Recursive call to restart the typing effect
+                  })
+                  .start();
+              };
+              typeAndDelete();
+            }}
+          />
+
           <h2 className="body_subheader">From Pixels to Perfection.</h2>
           <hr></hr>
           <p className="body_text">

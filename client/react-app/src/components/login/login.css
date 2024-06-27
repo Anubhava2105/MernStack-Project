@@ -220,7 +220,7 @@ h4 {
   .login_img {
     height: auto;
     width: 100%;
-    max-width: 300px;
+    max-width:500px;
     margin-bottom: 2rem;
     border-radius: 20px;
   }

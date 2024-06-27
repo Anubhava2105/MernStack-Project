@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import { useLogin } from "../../hooks/useLogin.jsx";
 import Image1 from "../../assets/login_illustration.png";
 import "./login.css";
