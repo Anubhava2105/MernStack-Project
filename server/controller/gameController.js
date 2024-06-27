@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 //get all games' info
 const getGame = async (req, res) => {
   try {
-    const games = await Game.find().sort({ name: 1 });
+    const admin_id = req.user._id;
+    const games = await Game.find({ admin_id }).sort({ name: 1 });
     res.status(200).json(games);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch games" });
@@ -55,6 +56,7 @@ const createGame = async (req, res) => {
       .json({ error: "Please fill in the following fields: " + emptyFields });
   }
   try {
+    const admin_id = req.user._id;
     const game = await Game.create({
       name,
       price,
@@ -63,6 +65,7 @@ const createGame = async (req, res) => {
       genre,
       rating,
       info,
+      admin_id,
     });
     res.status(200).json(game);
   } catch (error) {

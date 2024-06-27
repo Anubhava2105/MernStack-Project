@@ -5,6 +5,7 @@ import Street from "../../assets/street_fighter.svg";
 import { useParams } from "react-router-dom";
 import { UseAuthContext } from "../../hooks/useAuthContext";
 import { UseGamesContext } from "../../hooks/useGamesContext";
+import UpdateForm from "../updateGame/updateForm";
 import "./gameInfo.css";
 
 const GameInfo = () => {
@@ -55,10 +56,10 @@ const GameInfo = () => {
             <h2 className="game-name">{item.name}</h2>
             <div className="sub-header-container">
               <h2 className="game-info">{item.publisher}</h2>
-              <h2 className="game-info">{item.release}</h2>
+              <h2 className="game-info">{item.release.split("T")[0]}</h2>
             </div>
             <div className="price-info-container">
-              <h1>{item.price}</h1>
+              <h1>{item.price > 0 ? item.price : "Free"}</h1>
               <div>
                 <h2 className="game-info">{item.rating}</h2>
                 <h2 className="game-info">{item.genre}</h2>
@@ -67,12 +68,20 @@ const GameInfo = () => {
             <div className="game-body">
               <p>{item.info}</p>
             </div>
-            <div>
-              <span className="edit">
-                <MdEdit />
-                Edit
-              </span>
-            </div>
+            <Popup
+              trigger={
+                <button className="edit">
+                  <MdEdit />
+                  Edit
+                </button>
+              }
+              position="bottom center"
+              modal
+            >
+              <div className="modal">
+                <UpdateForm />
+              </div>
+            </Popup>
           </div>
         </div>
       ))}

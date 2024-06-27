@@ -29,7 +29,14 @@ const gameSchema=new Schema({
     info:{
         type:String,
         required:true
-    },    
+    },
+    admin_id:{
+        type:String,
+        required:true
+    },
+    img:{
+        type:String,
+    }
 },{timestamps:true})
 
 const Game=mongoose.model('Game',gameSchema);

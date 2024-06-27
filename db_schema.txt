@@ -8,6 +8,10 @@ doesnt need to have all fields filled, can only update one thing at a time.
 update form opens after clicking on edit button
 maybe like a modal maybe not
 
+also need to add images to database (maybe)
+
+
+
 
 
 

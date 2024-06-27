@@ -12,6 +12,8 @@ export const gameReducer = (state, action) => {
       return { games: [action.payload, ...state.games] };
     case "DELETE_GAME":
       return { games: state.games.filter((g) => g._id !== action.payload._id) };
+    case "UPDATE_GAME":
+      return{games:[action.payload,...state.games]}
     default:
       return state;
   }
