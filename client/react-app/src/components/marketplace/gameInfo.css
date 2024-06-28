@@ -1,143 +1,147 @@
 /* Container for the entire game information */
 .game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-  }
-  
-  /* Each individual game container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Each individual game container */
+.game-container > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border: 1px solid rgb(0, 0, 139);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for the game image */
+.game-img-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-img-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Container for the game info */
+.game-info-container {
+  flex: 2;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling for the game name */
+.game-name {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: rgb(0, 0, 139);
+}
+
+/* Sub-header container for additional game info */
+.sub-header-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sub-header-container .game-info {
+  font-size: 1.5rem;
+  color: rgb(20, 20, 196);
+}
+
+/* Price info container */
+.price-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.price-info-container h1 {
+  font-size: 2rem;
+  color: #a00b06;
+}
+.info{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.price-info-container .game-info {
+  font-size: 1.2rem;
+  color: rgb(20, 20, 196);
+}
+
+/* Game description body */
+.game-body {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.5;
+}
+.edit {
+  margin: 4rem auto;
+  background-color: rgb(0, 0, 139);
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.4rem;
+  width: fit-content;
+  height: auto;
+}
+.edit:hover {
+  background-color: rgb(20, 20, 196);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .game-container > div {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 1200px;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
   }
-  
-  /* Container for the game image */
-  .game-img-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+
+  .game-info-container {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .price-info-container {
+    flex-direction: column;
     align-items: center;
   }
-  
-  .game-img-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+
+  .price-info-container h1 {
+    font-size: 1.7rem;
   }
-  
-  /* Container for the game info */
-  .game-info-container {
-    flex: 2;
-    margin-left: 20px;
-    display: flex;
+
+  .sub-header-container {
     flex-direction: column;
+    align-items: center;
   }
-  
-  /* Styling for the game name */
+
+  .sub-header-container .game-info,
+  .price-info-container .game-info {
+    font-size: 1rem;
+  }
+
   .game-name {
     font-size: 2rem;
-    margin-bottom: 10px;
-    color: #333;
   }
-  
-  /* Sub-header container for additional game info */
-  .sub-header-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  
-  .sub-header-container .game-info {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
-  /* Price info container */
-  .price-info-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .price-info-container h1 {
-    font-size: 2rem;
-    color: #d9534f;
-  }
-  
-  .price-info-container .game-info {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
-  /* Game description body */
+
   .game-body {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.5;
+    text-align: center;
   }
-  .edit{
-    margin:4rem auto;
-    background-color: rgb(0, 0, 139);
-    border:none;
-    border-radius:1rem;
-    color:white;
-    font-size:1.5rem;
-    padding:0.4rem;
-    width:fit-content;
-    height:auto;
-  }
-  .edit:hover{
-    background-color: rgb(20, 20, 196);
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .game-container > div {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
-    }
-  
-    .game-info-container {
-      margin-left: 0;
-      margin-top: 20px;
-    }
-  
-    .price-info-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .price-info-container h1 {
-      font-size: 1.5rem;
-    }
-  
-    .sub-header-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .sub-header-container .game-info,
-    .price-info-container .game-info {
-      font-size: 1rem;
-    }
-  
-    .game-name {
-      font-size: 1.5rem;
-    }
-  
-    .game-body {
-      text-align: center;
-    }
-  }
-  
+}

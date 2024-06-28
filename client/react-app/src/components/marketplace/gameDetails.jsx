@@ -1,4 +1,5 @@
 import Shoe from "../../assets/shoe.png";
+import { FaTag } from "react-icons/fa";
 import { DeleteRounded } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 import { UseGamesContext } from "../../hooks/useGamesContext";
@@ -32,7 +33,7 @@ const GameDetails = ({ game }) => {
       <div className="card-img-container">
         <img src={Shoe}></img>
         <div className="card-overlay">
-          <h4>{game.price > 0 ? game.price : "Free"}</h4>
+          <h4>{game.price > 0 ? "Rs." + game.price : "Free"}</h4>
         </div>
       </div>
       <div className="tags-rate-container">

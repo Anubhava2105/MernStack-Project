@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { MdEdit } from "react-icons/md";
 import Popup from "reactjs-popup";
 import Street from "../../assets/street_fighter.svg";
-import { useParams } from "react-router-dom";
+import { NavLink, Navigate, useParams } from "react-router-dom";
 import { UseAuthContext } from "../../hooks/useAuthContext";
 import { UseGamesContext } from "../../hooks/useGamesContext";
 import UpdateForm from "../updateGame/updateForm";
@@ -49,20 +49,25 @@ const GameInfo = () => {
     <div className="game-container">
       {games.map((item) => (
         <div key={item._id}>
+          <NavLink to="/games"> {`< back`}</NavLink>
           <div className="game-img-container">
             <img src={Street} alt="game-info" />
           </div>
           <div className="game-info-container">
             <h2 className="game-name">{item.name}</h2>
             <div className="sub-header-container">
-              <h2 className="game-info">{item.publisher}</h2>
-              <h2 className="game-info">{item.release.split("T")[0]}</h2>
+              <h2 className="game-info">
+                Publishing Company: {item.publisher}
+              </h2>
+              <h2 className="game-info">
+                Release Date: {item.release.split("T")[0]}
+              </h2>
             </div>
             <div className="price-info-container">
-              <h1>{item.price > 0 ? item.price : "Free"}</h1>
-              <div>
-                <h2 className="game-info">{item.rating}</h2>
-                <h2 className="game-info">{item.genre}</h2>
+              <h1>{item.price > 0 ? "Rs. " + item.price : "Free"}</h1>
+              <div className="info">
+                <h2 className="game-info">Rating: {item.rating}</h2>
+                <h2 className="game-info">Genre: {item.genre}</h2>
               </div>
             </div>
             <div className="game-body">
